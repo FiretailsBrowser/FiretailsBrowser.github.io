@@ -1,0 +1,253 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    color: black;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+html { overflow: hidden; }
+body { overflow: auto; }
+
+:root {
+    --tails-orange: #e18437;
+    --tails-brown: #885225;
+    --globe-blue: blue;
+    --sonic-blue: blue;
+    --light-green: #5aaf5a;
+    --regular-red: red;
+    --pressed-green: #407740;
+    --pressed-red: #c21d1d;
+}
+
+
+@keyframes true-hero {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/Inter-Regular.ttf");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* trueheader */
+
+.true-header {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: calc(100% - 16px);
+    height: 48px;
+    padding: 8px;
+    background-color: #0000009e;
+    color: white;
+    justify-content: space-between;
+}
+
+.true-home {
+    font-size: 48px;
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+}
+
+.true-home img {
+    height: 48px;
+}
+
+.true-home * {
+    vertical-align: top;
+}
+
+
+
+.article-helpful, .article-unhelpful {
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 5px;
+    transition: 300ms;
+}
+
+.article-helpful:hover {
+    color: var(--pressed-green);
+}
+
+.article-unhelpful:hover {
+    color: var(--pressed-red);
+}
+
+.article-helpful {
+    color: var(--light-green);
+}
+
+.article-unhelpful {
+    color: var(--regular-red);
+}
+
+.true-links {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0px;
+}
+
+.true-link {
+    font-size: 24px;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.false-header {
+    background-color: black;
+    width: 100%;
+    height: 64px;
+}
+
+.true-hero {
+    width: 100%;
+    height: 470px;
+}
+
+.hero-text {
+    width: 100%;
+    height: 100%;
+    background-color: #0000007f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 37px;
+    font-weight: bold;
+    animation-name: true-hero;
+    animation-duration: 500ms;
+}
+
+.hero-title {
+    font-size: 64px;
+}
+
+.true-download {
+    font-size: 24px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--tails-orange);
+    width: fit-content;
+    outline: none;
+    padding: 8px 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.true-download:hover {
+    background-color: var(--tails-brown);
+}
+
+.true-download[disabled] {
+    color: #ffffff7f;
+    cursor: not-allowed;
+    background-color: var(--tails-orange);
+}
+
+h1,h2,h3,h4,h5,h6,p,pre {
+    margin: 0px;
+}
+
+.indented-body {
+    padding: 32px;
+    width: calc(100% - 64px);
+}
+
+.true-articles {
+    padding: 32px;
+    width: calc(100% - 64px);
+}
+
+.true-articles a {
+    text-decoration: none;
+    color: black;
+}
+
+.true-search {
+    width: calc(100% - 4px);
+    border: 2px solid black;
+    font-size: 19px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    outline: none;
+    font-weight: bold;
+}
+
+.true-search-align {
+    padding: 3px 32px;
+    width: calc(100% - 64px);
+}
+
+.true-article {
+    border: 3px solid black;
+    padding: 4px;
+    width: calc(100% - 14px);
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.true-article-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.true-article-body {
+    font-size: 19px;
+}
+
+.true-download-link {
+    color: black;
+    text-decoration: none;
+}
+
+.true-header-left {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.true-table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: calc(100% - 4px);
+}
+
+.true-table td, .true-table th {
+    border: 2px solid black;
+    text-align: left;
+}
+
+@media screen and (min-width: 645px) {
+    .header-download-icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 645px) {
+    .true-home span {
+        display: none;
+    }
+    .header-download-text {
+        display: none;
+    }
+}

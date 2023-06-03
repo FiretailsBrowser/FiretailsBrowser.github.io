@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Installing Firetails on a Chromebook - Firetails Support</title>
+        <link rel="icon" href='../../img/firetails-256x256.png' />
+        <link rel='shortcut-icon' href='../../img/firetails-256x256' />
+        <link rel='stylesheet' href='../../css/index.css' />
+        <link rel="stylesheet" href="../../css/fontawesome.css" />
+        <meta name='og:title' content="Installing Firetails on a Chromebook - Firetails Support" />
+        <meta name='og:site_name' content="Firetails" />
+        <meta name='og:description' content="Chromebooks already come with the Chrome web browser. But some people may not want to use Chrome. Chromebooks are designed to be lightweight devices for browsing the web, for when you don't need a fully fledged computer. This makes them an ideal choice for taking on trips, for example, if you need to work while on your trip through a web interface, or plan on using streaming services. Some people may want to be able to do this on their Chromebooks through another browser, such as Firetails. There are multiple ways you can achive this. Here, we'll go over 5 different ways that you can install Firetails on your Chromebook." />
+        <meta name='description' content="Chromebooks already come with the Chrome web browser. But some people may not want to use Chrome. Chromebooks are designed to be lightweight devices for browsing the web, for when you don't need a fully fledged computer. This makes them an ideal choice for taking on trips, for example, if you need to work while on your trip through a web interface, or plan on using streaming services. Some people may want to be able to do this on their Chromebooks through another browser, such as Firetails. There are multiple ways you can achive this. Here, we'll go over 5 different ways that you can install Firetails on your Chromebook." />
+    </head>
+    <body>
+        <div class='true-header'>
+            <div class='true-header-left'>
+                <a class='true-home' href='../../index.html'>
+                    <img src="../../img/firetails-256x256.png" />
+                    <span>
+                        <b>Firetails</b>
+                    </span>
+                </a>
+                <div class='true-links'>
+                    <a class='true-link' href='../../support/index.html'>
+                        Support
+                    </a>
+                </div>
+            </div>
+            <a href='../../download/index.html' class='true-download-link'>
+                <button class='true-download'>
+                    <span class='header-download-text'>Download</span>
+                    <span class='header-download-icon'><i class='fa fa-download'></i></span>
+                </button>
+            </a>
+        </div>
+        <div class='false-header'></div>
+        <div style='background-image: url("../../img/tails-hero.gif");' class='true-hero'>
+            <div class='hero-text'>
+                <span class='hero-title'>Installing Firetails on a Chromebook</span>
+            </div>
+        </div>
+        <div class='indented-body'>
+            <p>
+                Chromebooks already come with the Chrome web browser. 
+                But some people may not want to use Chrome.
+                Chromebooks are designed to be lightweight devices for browsing the web, for when you don't need a fully fledged computer.
+                This makes them an ideal choice for taking on trips, for example, if you need to work while on your trip through a web interface, or plan on using streaming services.
+                Some people may want to be able to do this on their Chromebooks through another browser, such as Firetails.
+                There are multiple ways you can achive this.
+                Here, we'll go over 5 different ways that you can install Firetails on your Chromebook.
+            </p>
+            <br>
+            <p>
+                <b>Method 1: Install Firetails inside of Crostini</b>
+            </p>
+            <br>
+            <p>
+                On supported models of Chromebooks, chromeOS has a virtual Linux environment called "Crostini".
+                You can set this up by going to chromeOS `Settings > Advanced > Developers` and select "Turn On" button under "Linux development environment".
+                Once its done installing Linux to the virtual environment, open Terminal, and select "Linux" for the shell.
+                You should see a bash prompt - this is the shell in the virtual environment.
+                Download Firetails for Linux on the x86_64 architecture.
+                Make sure to save it to somewhere inside the "Linux" folder in the Files app - this is a shared folder between chromeOS and the Linux VM.
+                Once you're done, run `chmod 777 /mnt/{insert path here}/path/to/Firetails-Linux-x86_64.appimage` inside the terminal - this will allow you to run it.
+                Then, run `/mnt/{insert path here}/path/to/Firetails-Linux-x86_64.appimage` to run the Firetails installer.
+                Then, in chromeOS' launcher, you should see Firetails under the "Linux apps" folder.
+                Viola - you now have Firetails!
+            </p>
+            <br>
+            <p>
+                <b>Method 2: Install Firetails directly on chromeOS</b>
+            </p>
+            <br>
+            <p>
+                This method is a little more complicated than the other methods.
+                First, make sure any important files on your Chromebook (excluding things synced to Google Drive) are backed up.
+                Once you're sure <i>everything</i> is backed up, boot into recovery mode by pressing `Esc+Refresh+Power`.
+                Once you've done this, press `Ctrl+D`.
+                On reboot, press `Keypress`.
+                It is <b>very important</b> you have everything backed up, as if you continue, everything on your Chromebook will be deleted, and this action is <b>not</b> reversible!
+                Once you've done this, your Chromebook is now in developer mode - you have access to shell mode of Crosh.
+                But this is not what you want to do - when you boot up your Chromebook, sign in as you would normally do.
+                You're going to want to open a Crosh window by pressing `Ctrl+Alt+T`.
+                Once Crosh is open, run `insert command` in `shell` mode. Once its finished, reboot your Chromebook, and sign in again.
+                This allows you to modify system files.
+                Now download Firetails for Linux on the x86_64 architecture.
+                Drag it to your browser <b>address bar</b>, not the tab. Copy the file path, which is the URL excluding the `file://`.
+                An example is `/home/chronos/u-b7a8b7e848a0c1987ebe78ab9e88b0/MyFiles/Downloads/Firetails-Linux-x86_64.appimage`.
+                Open Crosh again, and run the `sudo cp /path/to/Firetails-Linux-x86_64.appimage /usr/bin`.
+                This will copy the installer to the `/usr/bin` folder.
+                Once the file is copied to `/usr/bin`, run `sudo chmod 777 /usr/bin/Firetails-Linux-x86_64.appimage` to allow you to run it.
+                Then, run `sudo /usr/bin/Firetails-Linux-x86_64.appimage` to start the installer.
+            </p>
+            <br>
+            <p>
+                <b>Method 3: Install Linux on your Chromebook</b>
+            </p>
+            <br>
+            <p>
+                Install a USB image flasher (eg Chromebook Recovery Tool) and flash your favorite Linux distro installer to a USB stick.
+                Make sure everything is backed up if they aren't automatically synced to Google by chromeOS.
+                Once you're sure everything is backed up, press `Esc+Refresh+Power` to boot into recovery mode.
+                Once in recovery mode, press `Ctrl+D` to enable developer mode.
+                This will permanently delete <b>all data</b> off of your Chromebook, so make sure <b>everything important is backed up</b>!
+                When your device reboots, you'll see a warning similar to "OS Verification is Off".
+                At this screen, insert your USB stick, press `Ctrl+L`, and select `1`.
+                Install the Linux distro, remove your USB stick, reboot, and repeat.
+                Then, install Firetails for Linux on the distro you installed.
+            </p>
+            <br>
+            <div class='article-feedback'>
+                <p class='article-feedback-title'>Was this article helpful?</p>
+                <p>
+                    <span class='article-helpful'>
+                        <i class='fa fa-thumbs-up'></i>
+                    </span>
+                    <span class='article-unhelpful'>
+                        <i class='fa fa-thumbs-down'></i>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <script src='../../js/SupportArticleFeedback.js'></script>
+    </body>
+</html>
